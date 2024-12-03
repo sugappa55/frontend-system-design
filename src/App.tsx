@@ -6,8 +6,9 @@
 // import { BreadcrumbsPreview } from './components/Breadcrumbs';
 // import GridLights from './machine-coding-questions/GridLights';
 // import CursorFollower from './machine-coding-questions/CursorFollower';
-import LikeButton from './machine-coding-questions/LikeButton';
-import { MultiSelectSearchPreview } from './machine-coding-questions/MultiSelectSearch';
+import CountDownTimer from './machine-coding-questions/CountDownTimer';
+// import LikeButton from './machine-coding-questions/LikeButton';
+// import { MultiSelectSearchPreview } from './machine-coding-questions/MultiSelectSearch';
 // import { InfiniteScrollPreview } from './machine-coding-questions/InfiniteScroll';
 // import OtpInput from './machine-coding-questions/OtpInput';
 
@@ -68,7 +69,8 @@ function App() {
       {/* <InfiniteScrollPreview /> */}
       {/* <CursorFollower /> */}
       {/* <LikeButton /> */}
-      <MultiSelectSearchPreview />
+      {/* <MultiSelectSearchPreview /> */}
+      <CountDownTimer />
     </div>
   );
 }
