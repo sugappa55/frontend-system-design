@@ -5,7 +5,8 @@
 
 // import ProgressBar from './components/ProgressBar';
 // import { BreadcrumbsPreview } from './components/Breadcrumbs';
-import GridLights from './machine-coding-questions/GridLights';
+// import GridLights from './machine-coding-questions/GridLights';
+import OtpInput from './machine-coding-questions/OtpInput';
 
 function App() {
   // const [page, setPage] = useState(1);
@@ -59,7 +60,8 @@ function App() {
 
       {/* <ProgressBar value={value} /> */}
       {/* <BreadcrumbsPreview /> */}
-      <GridLights />
+      {/* <GridLights /> */}
+      <OtpInput length={6} onSubmit={(value: string) => console.log(value)} />
     </div>
   );
 }
