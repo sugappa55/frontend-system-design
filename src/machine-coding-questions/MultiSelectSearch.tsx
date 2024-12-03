@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, ReactNode, useCallback, useEffect, useRef, useState, KeyboardEvent } from 'react';
 import { CrossIcon } from '../Icons';
 import useFetch from '../hooks/useFetch';
 import { debounce } from '../utils';
@@ -25,14 +25,20 @@ const MultiSelectSearch = ({
     onSearchItem(value);
   };
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Backspace' && !search) {
+      onClearItem(selected[selected.length - 1].email);
+    }
+  };
+
   useEffect(() => {
     if (inputRef.current) inputRef.current.focus();
-  }, []);
+  }, [selected]);
 
   const inputRef = useRef<HTMLInputElement | null>(null);
   return (
-    <div className='w-[500px]'>
-      <div className='flex relative rounded-lg items-center border border-blue-600 p-3 flex-wrap gap-x-2'>
+    <div className='w-[500px] shadow-xl'>
+      <div className='flex relative rounded-lg items-center border border-blue-600 p-3 flex-wrap gap-2'>
         {selected.map(item => (
           <div className='px-3 py-2 gap-2 rounded-3xl bg-blue-600 text-white flex items-center'>
             <span>{item.name} </span>
@@ -47,6 +53,7 @@ const MultiSelectSearch = ({
           ref={inputRef}
           onChange={handleSearch}
           value={search}
+          onKeyDown={handleKeyDown}
         />
       </div>
       <div className=' h-[300px] overflow-scroll'>{data.map(elem => render(elem))}</div>
@@ -63,13 +70,12 @@ export const MultiSelectSearchPreview = () => {
     ...(search && { q: search })
   });
 
-  console.log(data?.users);
   return (
     <MultiSelectSearch
       data={data?.users || []}
       selected={selected}
       onSearch={val => setSearch(val)}
-      onClearItem={() => {}}
+      onClearItem={email => setSelected(user => user.filter(user => user.email !== email))}
       render={(item: UserDetail) => (
         <div
           className='flex items-center p-2 gap-2 shadow-md cursor-pointer'
