@@ -2,11 +2,12 @@
 // import Pagination from "./components/Pagination";
 // import Stepper from './components/Stepper';
 // import SortableTable from './machine-coding-questions/SortableTable';
-
 // import ProgressBar from './components/ProgressBar';
 // import { BreadcrumbsPreview } from './components/Breadcrumbs';
 // import GridLights from './machine-coding-questions/GridLights';
-import OtpInput from './machine-coding-questions/OtpInput';
+import CursorFollower from './machine-coding-questions/CursorFollower';
+// import { InfiniteScrollPreview } from './machine-coding-questions/InfiniteScroll';
+// import OtpInput from './machine-coding-questions/OtpInput';
 
 function App() {
   // const [page, setPage] = useState(1);
@@ -61,7 +62,9 @@ function App() {
       {/* <ProgressBar value={value} /> */}
       {/* <BreadcrumbsPreview /> */}
       {/* <GridLights /> */}
-      <OtpInput length={6} onSubmit={(value: string) => console.log(value)} />
+      {/* <OtpInput length={6} onSubmit={(value: string) => console.log(value)} /> */}
+      {/* <InfiniteScrollPreview /> */}
+      <CursorFollower />
     </div>
   );
 }
