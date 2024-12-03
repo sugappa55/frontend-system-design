@@ -5,7 +5,8 @@
 // import ProgressBar from './components/ProgressBar';
 // import { BreadcrumbsPreview } from './components/Breadcrumbs';
 // import GridLights from './machine-coding-questions/GridLights';
-import CursorFollower from './machine-coding-questions/CursorFollower';
+// import CursorFollower from './machine-coding-questions/CursorFollower';
+import LikeButton from './machine-coding-questions/LikeButton';
 // import { InfiniteScrollPreview } from './machine-coding-questions/InfiniteScroll';
 // import OtpInput from './machine-coding-questions/OtpInput';
 
@@ -64,7 +65,8 @@ function App() {
       {/* <GridLights /> */}
       {/* <OtpInput length={6} onSubmit={(value: string) => console.log(value)} /> */}
       {/* <InfiniteScrollPreview /> */}
-      <CursorFollower />
+      {/* <CursorFollower /> */}
+      <LikeButton />
     </div>
   );
 }
