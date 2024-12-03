@@ -7,6 +7,7 @@
 // import GridLights from './machine-coding-questions/GridLights';
 // import CursorFollower from './machine-coding-questions/CursorFollower';
 import LikeButton from './machine-coding-questions/LikeButton';
+import { MultiSelectSearchPreview } from './machine-coding-questions/MultiSelectSearch';
 // import { InfiniteScrollPreview } from './machine-coding-questions/InfiniteScroll';
 // import OtpInput from './machine-coding-questions/OtpInput';
 
@@ -66,7 +67,8 @@ function App() {
       {/* <OtpInput length={6} onSubmit={(value: string) => console.log(value)} /> */}
       {/* <InfiniteScrollPreview /> */}
       {/* <CursorFollower /> */}
-      <LikeButton />
+      {/* <LikeButton /> */}
+      <MultiSelectSearchPreview />
     </div>
   );
 }

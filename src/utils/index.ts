@@ -21,3 +21,20 @@ export function throttle(fn: (...args: any[]) => void, delay = 500) {
     }
   };
 }
+
+export const makeUrlWithParams = (url: string, params: Record<string, string>) => {
+  const paramsString = Object.keys(params)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(String(params[key]))}`)
+    .join('&');
+  return `${url}?${paramsString}`;
+};
+
+export function debounce(fn: (...args: any[]) => void, delay = 500) {
+  let id: number;
+  return function (...args: any[]) {
+    if (id) clearTimeout(id);
+    id = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+}

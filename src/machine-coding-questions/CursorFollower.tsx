@@ -5,7 +5,6 @@ const CursorFollower = () => {
   const childRef = useRef<HTMLDivElement | null>(null);
 
   const onMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    console.log(e);
     const { clientX, clientY } = e;
     if (childRef.current) {
       childRef.current.style.left = `${clientX - 2}px`;
